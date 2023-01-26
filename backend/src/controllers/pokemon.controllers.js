@@ -1,5 +1,6 @@
 let pokemon = {};
 const request = require("request")
+const conection = require("../DB/conection")
 
 pokemon.getPokemon = (req, res) =>{
     const url = `https://pokeapi.co/api/v2/pokemon/`;
@@ -24,6 +25,15 @@ pokemon.getPokemonByName = (req, res) =>{
         if(err) throw console.log(err);
         const data = JSON.parse(body)
         res.json(data);
+    })
+}
+
+pokemon.postPokemon = (req, res) =>{
+    const {name, id, experience, front_default, height} = req.body;
+    conection.query(`INSERT INTO pokemon(name, id, experience, front_default, height) VALUE ("${name}", ${id}, ${experience}, "${front_default}", ${height})`, (err)=>{
+        if(err) throw err;
+        console.log("nuevo pokemon atrapado");
+        res.send("nuevo pokemon atrapado");
     })
 }
 
