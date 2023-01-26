@@ -51,14 +51,14 @@ export default function Home() {
                 
             </div>
         </section>
-        <section className='text-center w-[20%]'>
+        <section className='text-center w-[20%] control'>
             <form onSubmit={GetData}>
                 <h2 className='text-white text-xl'>App</h2>
                 <div className='grid grid-cols-1 gap-6 my-6'>
                     <input id="id" type='number' placeholder='ID' className='text-center bg-transparent border-[2px] border-white rounded-md h-14' onChange={(e)=>setId(e.target.value)} />
                     <input id="id" placeholder='NOMBRE*' className='text-center bg-transparent border-[2px] border-white rounded-md h-14' onChange={(e)=>setNombre(e.target.value)} />
                 </div>
-                <button className='bg-lime-400 mt-14 rounded-3xl w-52 relative left-[60%] font-semibold text-white px-4 py-3 flex content-center justify-evenly text-lg'><img src={background} className="rounded-full w-8 h-8" />Consultar</button>
+                <button className='btn bg-lime-400 mt-14 rounded-3xl w-52 relative left-[60%] font-semibold text-white px-4 py-3 flex content-center justify-evenly text-lg'><img src={background} className="rounded-full w-8 h-8" />Consultar</button>
             </form>
         </section>
     </div>

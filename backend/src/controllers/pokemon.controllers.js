@@ -31,10 +31,13 @@ pokemon.getPokemonByName = (req, res) =>{
 pokemon.postPokemon = (req, res) =>{
     const {name, id, experience, front_default, height} = req.body;
     conection.query(`INSERT INTO pokemon(name, id, experience, front_default, height) VALUE ("${name}", ${id}, ${experience}, "${front_default}", ${height})`, (err)=>{
-        if(err) throw err;
+       if(err) console.log("error, el pokemon ya existe");
+       else{
         console.log("nuevo pokemon atrapado");
-        res.send("nuevo pokemon atrapado");
+        res.send("nuevo pokemon atrapado"); 
+       }
     })
+    
 }
 
 module.exports = pokemon;
