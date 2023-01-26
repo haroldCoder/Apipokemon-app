@@ -5,7 +5,7 @@ const {getPokemon, getPokemonByName} = require("../controllers/pokemon.controlle
 route.route("/")
 .get(getPokemon)
 
-route.get("/:name")
+route.route("/:idOrName")
 .get(getPokemonByName)
 
 module.exports = route;
