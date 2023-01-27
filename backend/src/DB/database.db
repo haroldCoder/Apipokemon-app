@@ -1,0 +1,12 @@
+CREATE DATABASE pokedb;
+
+USE pokedb;
+
+CREATE TABLE `pokedb`.`pokemon` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `experience` INT NOT NULL,
+  `front_default` VARCHAR(85) NOT NULL,
+  `height` INT NOT NULL,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE);
